@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Environmental Data Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Environmental Data Dashboard</h1>
+
+    <p>
+      <strong>Predicted Temperature:</strong>
+      <span id="temp">Loading...</span> °C
+    </p>
+    <button onclick="getPredictions()">Get Predictions</button>
+
+    <div id="graph-container"></div>
+    <!-- Where the graph will be rendered -->
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
