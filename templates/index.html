@@ -1,5 +1,3 @@
-<!-- templates/index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,8 +18,18 @@
     </p>
     <button onclick="getPredictions()">Get Predictions</button>
 
-    <div id="graph-container"></div>
-    <!-- Where the graph will be rendered -->
+    <!-- Train model button -->
+    <button onclick="trainModel()">Train Model</button>
+
+    <div id="graph-container" style="margin-top: 30px;">
+      <div id="temp-vs-hour" style="width: 100%; height: 400px;"></div>
+      <div id="temp-vs-pressure" style="width: 100%; height: 400px;"></div>
+      <div id="temp-vs-altitude" style="width: 100%; height: 400px;"></div>
+      <div id="temp-vs-humidity" style="width: 100%; height: 400px;"></div>
+    </div>
+
+    <!-- Refresh Data button -->
+    <button onclick="refreshData()">Refresh Data</button>
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
